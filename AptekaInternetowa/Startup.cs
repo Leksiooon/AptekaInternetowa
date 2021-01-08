@@ -26,7 +26,7 @@ namespace AptekaInternetowa
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, AppDbContext ctx)
         {
             if (env.IsDevelopment())
             {
@@ -35,6 +35,9 @@ namespace AptekaInternetowa
 
             app.UseStatusCodePages();
             app.UseStaticFiles();
+
+            DbInitializer.Seed(ctx);
+
             app.UseMvcWithDefaultRoute();
         }
     }

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace AptekaInternetowa.Models
+namespace AptekaInternetowa.Models.ProduktM
 {
     public interface IProduktRepository
     {
         IEnumerable<Produkt> PobierzWszystkieProdukty();
-        Produkt pobierzProduktOId(int produktId);
+        Produkt PobierzProduktOId(int produktId);
     }
 }

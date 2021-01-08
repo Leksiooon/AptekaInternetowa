@@ -1,0 +1,16 @@
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\bin\Debug\netcoreapp2.1\appsettings.json
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\bin\Debug\netcoreapp2.1\AptekaInternetowa.deps.json
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\bin\Debug\netcoreapp2.1\AptekaInternetowa.runtimeconfig.json
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\bin\Debug\netcoreapp2.1\AptekaInternetowa.runtimeconfig.dev.json
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\bin\Debug\netcoreapp2.1\AptekaInternetowa.dll
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\bin\Debug\netcoreapp2.1\AptekaInternetowa.pdb
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.AssemblyInfoInputs.cache
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.AssemblyInfo.cs
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.csproj.CoreCompileInputs.cache
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.RazorAssemblyInfo.cache
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.RazorAssemblyInfo.cs
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.RazorTargetAssemblyInfo.cache
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.dll
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.pdb
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.genruntimeconfig.cache
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.csprojAssemblyReference.cache

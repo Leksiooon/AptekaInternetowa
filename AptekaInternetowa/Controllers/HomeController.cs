@@ -1,5 +1,7 @@
 ﻿using AptekaInternetowa.Models.ProduktM;
+using AptekaInternetowa.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace AptekaInternetowa.Controllers
 {
@@ -14,7 +16,15 @@ namespace AptekaInternetowa.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var produkty = _produktRepository.PobierzWszystkieProdukty();
+
+            var homeVM = new HomeVM()
+            {
+                Title = "Przegląd produktów",
+                Produkty = produkty.ToList()
+            };
+
+            return View(homeVM);
         }
     }
 }

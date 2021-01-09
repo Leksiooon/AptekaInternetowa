@@ -12,7 +12,6 @@ namespace AptekaInternetowa.Models
                 context.Produkty.AddRange(
                     new Produkt
                     {
-                        Id = 1,
                         Nazwa = "Traumon 100 mg/g, żel, 100g",
                         Producent = "MYLAN",
                         Cena = 19.99,
@@ -28,7 +27,6 @@ namespace AptekaInternetowa.Models
 
                     new Produkt
                     {
-                        Id = 2,
                         Nazwa = "Nurofen Forte 400 mg, 48 tabletek powlekanych",
                         Producent = "RECKITT BENCKISER",
                         Cena = 24.99,
@@ -44,7 +42,6 @@ namespace AptekaInternetowa.Models
 
                     new Produkt
                     {
-                        Id = 3,
                         Nazwa = "Otrivin 1mg/ 1ml, areozol do nosa, 10ml",
                         Producent = "GLAXOSMITHKLINE",
                         Cena = 13.99,
@@ -60,7 +57,6 @@ namespace AptekaInternetowa.Models
 
                     new Produkt
                     {
-                        Id = 4,
                         Nazwa = "SEMA Herba Na odporność Fix, 2 g x 30 saszetek",
                         Producent = "LABOLAROTIA GEMINI",
                         Cena = 6.49,
@@ -76,7 +72,6 @@ namespace AptekaInternetowa.Models
 
                     new Produkt
                     {
-                        Id = 5,
                         Nazwa = "Syrop prawoślazowy 35,9 g/ 100 g, 125 g",
                         Producent = "AMARA",
                         Cena = 2.79,
@@ -92,7 +87,6 @@ namespace AptekaInternetowa.Models
 
                     new Produkt
                     {
-                        Id = 6,
                         Nazwa = "Systane Ultra, nawilżające krople do oczu, 10 ml",
                         Producent = "ALCON",
                         Cena = 32.92,

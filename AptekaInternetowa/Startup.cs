@@ -36,9 +36,15 @@ namespace AptekaInternetowa
             app.UseStatusCodePages();
             app.UseStaticFiles();
 
+
             DbInitializer.Seed(ctx);
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "Default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }

@@ -26,5 +26,15 @@ namespace AptekaInternetowa.Controllers
 
             return View(homeVM);
         }
+
+        public IActionResult Szczegoly(int id)
+        {
+            var produkt = _produktRepository.PobierzProduktOId(id);
+
+            if (produkt == null)
+                return NotFound();
+
+            return View(produkt);
+        }
     }
 }

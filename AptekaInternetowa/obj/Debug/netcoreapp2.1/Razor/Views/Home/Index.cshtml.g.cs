@@ -67,7 +67,7 @@ Write(Model.Title);
             WriteLiteral("        <div class=\"col-sm-3 col-md-3 col-lg-3\">\r\n            <div class=\"img-thumbnail\">\r\n                ");
             EndContext();
             BeginContext(250, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "56f83b1b715f4d02b653294418020031", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f684d2d7391146cab0e45a08f1910578", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -94,7 +94,7 @@ AddHtmlAttributeValue("", 283, produkt.ZdjecieUrl, 283, 19, false);
             WriteLiteral("\r\n                ");
             EndContext();
             BeginContext(331, 102, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2d8b2b82e6ac475ead3c20cb0a0cdcbe", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "673d56cc6074421691bebd8f9102e47f", async() => {
                 BeginContext(406, 4, true);
                 WriteLiteral("<h2>");
                 EndContext();

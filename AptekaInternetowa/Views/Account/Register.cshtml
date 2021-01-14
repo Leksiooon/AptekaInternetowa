@@ -1,0 +1,34 @@
+﻿@model AptekaInternetowa.Models.ViewModels.RegisterVM
+
+<h2>
+    Jeśli posiadasz już konto, 
+    <a asp-action="Register" asp-controller="Account">zaloguj się!</a>"
+</h2>
+
+<form asp-action="Register" asp-controller="Account" method="post" role="form">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" />
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ComparePassword"></label>
+        <input asp-for="ComparePassword" />
+        <span asp-validation-for="ComparePassword" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Rejestracja" />
+    </div>
+
+</form>

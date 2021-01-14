@@ -44,7 +44,7 @@ namespace AspNetCore
             WriteLiteral("\r\n<div class=\"container\" style=\"padding: 15px\">\r\n    <div class=\"row\">\r\n        <div class=\"col-4\">\r\n            ");
             EndContext();
             BeginContext(163, 46, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "71861dca427c4a4db67c482ebac465e2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "252eaada7c114deea7e190f74cfe32f8", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

@@ -1,29 +1,41 @@
 ﻿@model AptekaInternetowa.Models.ViewModels.RegisterVM
 
 <h2>
-    Jeśli posiadasz już konto, 
-    <a asp-action="Register" asp-controller="Account">zaloguj się!</a>"
+    Jeśli posiadasz już konto,
+    <a asp-action="Login" asp-controller="Account">zaloguj się!</a>"
 </h2>
 
 <form asp-action="Register" asp-controller="Account" method="post" role="form">
 
-    <div asp-validation-summary="All" class="text-danger"></div>
+    @*<div asp-validation-summary="All" class="text-danger"></div>*@
 
     <div class="form-group">
-        <label asp-for="UserName"></label>
-        <input asp-for="UserName" />
+        <div class="row">
+            <label asp-for="UserName" class="col-2 col-form-label"></label>
+            <div class="col-8">
+                <input asp-for="UserName" class="form-control" />
+            </div>
+        </div>
         <span asp-validation-for="UserName" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="Password"></label>
-        <input asp-for="Password" />
+        <div class="row">
+            <label asp-for="Password" class="col-2 col-form-label"></label>
+            <div class="col-8">
+                <input asp-for="Password" class="form-control" />
+            </div>
+        </div>
         <span asp-validation-for="Password" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="ComparePassword"></label>
-        <input asp-for="ComparePassword" />
+        <div class="row">
+            <label asp-for="ComparePassword" class="col-2 col-form-label"></label>
+            <div class="col-8">
+                <input asp-for="ComparePassword" class="form-control" />
+            </div>
+        </div>
         <span asp-validation-for="ComparePassword" class="text-danger"></span>
     </div>
 

@@ -14,6 +14,8 @@ E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaIn
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.TagHelpers.input.cache
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.TagHelpers.output.cache
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.RazorCoreGenerate.cache
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.cshtml.g.cs
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\Razor\Views\Account\Register.cshtml.g.cs
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\Razor\Views\Home\Szczegoly.cshtml.g.cs
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -27,5 +29,3 @@ E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaIn
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.genruntimeconfig.cache
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.csproj.CopyComplete
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.csprojAssemblyReference.cache
-E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.cshtml.g.cs
-E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\Razor\Views\Account\Register.cshtml.g.cs

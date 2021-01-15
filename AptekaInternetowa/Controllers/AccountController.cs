@@ -62,12 +62,14 @@ namespace AptekaInternetowa.Controllers
 
                 if (result.Succeeded)
                     return RedirectToAction("Index", "Home");
+
+                foreach (var item in result.Errors)
+                    ModelState.AddModelError("", item.Description);
             }
 
             return View(registerVM);
         }
 
-        [HttpPost]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();

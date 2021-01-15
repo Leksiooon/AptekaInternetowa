@@ -23,6 +23,15 @@ namespace AptekaInternetowa
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 6;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireUppercase = true;
+                options.Password.RequireNonAlphanumeric = true;
+                //options.User.RequireUniqueEmail = true;
+            });
             services.AddTransient<IProduktRepository, ProduktRepository>();
             services.AddMvc();
         }
@@ -41,6 +50,8 @@ namespace AptekaInternetowa
 
             DbInitializer.Seed(ctx);
 
+
+            app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

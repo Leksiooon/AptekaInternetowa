@@ -1,0 +1,29 @@
+﻿@model AptekaInternetowa.Models.ProduktM.Produkt
+
+<div class="container" style="padding: 15px">
+    <div class="row">
+        <div class="col-4">
+            <img src="~/images/@Model.ZdjecieUrl" alt=""/>
+        </div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-8">
+                    <h4>@Model.Nazwa</h4>
+                </div>
+                <div class="col-4">
+                    <p>Producent: @Model.Producent</p>  
+                </div>
+            </div>
+
+            <p><h6>Cena za sztukę:</h6> @Model.Cena</p>
+            <p><h6>Działanie:</h6> @Model.Dzialanie</p>
+            <p><h6>Wskazania:</h6> @Model.Wskazania</p>         
+        </div>
+    </div>
+
+    <p><h5>Dawkowanie:</h5> @Model.Dawkowanie</p>
+    <p><h5>Skład:</h5> @Model.Sklad</p>
+    <p><h5>Przeciwwskazania:</h5> @Model.Przeciwwskazania</p>
+    <p><h5>Dodatkowe informacje:</h5> @Model.DodatkoweInformacje</p>
+
+</div>

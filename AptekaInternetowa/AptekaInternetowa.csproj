@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <None Include="wwwroot\lib\bootstrap\.github\CONTRIBUTING.md" />
+    <None Include="wwwroot\lib\bootstrap\.github\ISSUE_TEMPLATE.md" />
+    <None Include="wwwroot\lib\jquery\.github\ISSUE_TEMPLATE.md" />
+    <None Include="wwwroot\lib\jquery\.github\lock.yml" />
+    <None Include="wwwroot\lib\jquery\.github\PULL_REQUEST_TEMPLATE.md" />
+    <None Include="wwwroot\lib\jquery\.github\workflows\codeql-analysis.yml" />
   </ItemGroup>
 
   <ItemGroup>

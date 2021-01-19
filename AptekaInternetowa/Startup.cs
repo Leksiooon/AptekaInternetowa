@@ -1,5 +1,6 @@
 ﻿using AptekaInternetowa.Models;
 using AptekaInternetowa.Models.ProduktM;
+using AptekaInternetowa.Models.ZamowienieM;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -33,6 +34,7 @@ namespace AptekaInternetowa
                 //options.User.RequireUniqueEmail = true;
             });
             services.AddTransient<IProduktRepository, ProduktRepository>();
+            services.AddTransient<IZamowienieElementRepository, ZamowienieElementRepository>();
             services.AddMvc();
         }
 
@@ -56,7 +58,7 @@ namespace AptekaInternetowa
             {
                 routes.MapRoute(
                     name: "Default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}/{ilosc?}");
             });
         }
     }

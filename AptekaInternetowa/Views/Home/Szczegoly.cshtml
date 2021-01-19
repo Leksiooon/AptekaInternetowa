@@ -11,13 +11,14 @@
                     <h4>@Model.Nazwa</h4>
                 </div>
                 <div class="col-4">
-                    <p>Producent: @Model.Producent</p>  
+                    <p>Producent: @Model.Producent</p>
                 </div>
             </div>
 
             <p><h6>Cena za sztukę:</h6> @Model.Cena</p>
+            <a asp-controller="ZamowienieElement" asp-action="Add" asp-route-id="@Model.Id" asp-route-ilosc="1" class="btn btn-primary" role="button">Link</a>
             <p><h6>Działanie:</h6> @Model.Dzialanie</p>
-            <p><h6>Wskazania:</h6> @Model.Wskazania</p>         
+            <p><h6>Wskazania:</h6> @Model.Wskazania</p>
         </div>
     </div>
 

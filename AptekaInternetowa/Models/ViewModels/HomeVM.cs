@@ -1,7 +1,7 @@
 ﻿using AptekaInternetowa.Models.ProduktM;
 using System.Collections.Generic;
 
-namespace AptekaInternetowa.ViewModels
+namespace AptekaInternetowa.Models.ViewModels
 {
     public class HomeVM
     {

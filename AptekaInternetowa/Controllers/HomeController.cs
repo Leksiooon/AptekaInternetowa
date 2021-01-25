@@ -1,5 +1,5 @@
 ﻿using AptekaInternetowa.Models.ProduktM;
-using AptekaInternetowa.ViewModels;
+using AptekaInternetowa.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
@@ -34,7 +34,13 @@ namespace AptekaInternetowa.Controllers
             if (produkt == null)
                 return NotFound();
 
-            return View(produkt);
+            var SzczegolyVM = new SzczegolyVM
+            {
+                Produkt = produkt,
+                ilosc = 1
+            };
+
+            return View(SzczegolyVM);
         }
     }
 }

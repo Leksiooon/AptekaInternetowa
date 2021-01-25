@@ -1,0 +1,10 @@
+﻿using AptekaInternetowa.Models.ProduktM;
+
+namespace AptekaInternetowa.Models.ViewModels
+{
+    public class SzczegolyVM
+    {
+        public Produkt Produkt { get; set; }
+        public int ilosc { get; set; }
+    }
+}

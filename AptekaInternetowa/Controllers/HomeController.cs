@@ -16,7 +16,7 @@ namespace AptekaInternetowa.Controllers
 
         public IActionResult Index()
         {
-            var produkty = _produktRepository.PobierzWszystkieProdukty();
+            var produkty = _produktRepository.GetAll();
 
             var homeVM = new HomeVM()
             {
@@ -29,7 +29,7 @@ namespace AptekaInternetowa.Controllers
 
         public IActionResult Szczegoly(int id)
         {
-            var produkt = _produktRepository.PobierzProduktOId(id);
+            var produkt = _produktRepository.GetById(id);
 
             if (produkt == null)
                 return NotFound();

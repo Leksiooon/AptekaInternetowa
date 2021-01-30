@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
-namespace AptekaInternetowa.Models.ZamowienieM
+namespace AptekaInternetowa.Models.ZamowienieElementM
 {
     public class ZamowienieElementRepository : IZamowienieElementRepository
     {
@@ -14,18 +11,18 @@ namespace AptekaInternetowa.Models.ZamowienieM
             _appDbContext = appDbContext;
         }
 
-        public void DodajZamowienieElement(ZamowienieElement zamowienieElement)
+        public void Add(ZamowienieElement zamowienieElement)
         {
             _appDbContext.ZamowienieElement.Add(zamowienieElement);
             _appDbContext.SaveChanges();
         }
 
-        public ZamowienieElement PobierzZamowienieElementOId(int zamowienieElementId)
+        public ZamowienieElement GetById(int zamowienieElementId)
         {
             return _appDbContext.ZamowienieElement.FirstOrDefault(x => x.Id == zamowienieElementId);
         }
 
-        public void UsunZamowienieElement(ZamowienieElement zamowienieElement)
+        public void Remove(ZamowienieElement zamowienieElement)
         {
             _appDbContext.ZamowienieElement.Remove(zamowienieElement);
             _appDbContext.SaveChanges();

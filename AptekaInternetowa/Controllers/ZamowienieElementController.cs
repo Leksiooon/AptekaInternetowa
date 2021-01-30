@@ -1,5 +1,5 @@
 ﻿using AptekaInternetowa.Models.ViewModels;
-using AptekaInternetowa.Models.ZamowienieM;
+using AptekaInternetowa.Models.ZamowienieElementM;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AptekaInternetowa.Controllers
@@ -19,10 +19,10 @@ namespace AptekaInternetowa.Controllers
             var ZamowienieElement = new ZamowienieElement
             {
                 Ilosc = szczegolyVM.ilosc,
-                ProduktId = szczegolyVM.Produkt.Id
+                Produkt = szczegolyVM.Produkt
             };
 
-            _zamowienieElement.DodajZamowienieElement(ZamowienieElement);
+            _zamowienieElement.Add(ZamowienieElement);
 
             return RedirectToAction("Szczegoly", "Home", new { id = szczegolyVM.Produkt.Id });
         }

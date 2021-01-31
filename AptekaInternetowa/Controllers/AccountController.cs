@@ -44,7 +44,7 @@ namespace AptekaInternetowa.Controllers
                     var principal = new ClaimsPrincipal(identity);
                     var props = new AuthenticationProperties();
                     HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, props).Wait();
-                    return RedirectToAction("ListOfUsers", "Account");
+                    return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", "Wpisane dane są niepoprawne!");
             }
@@ -62,6 +62,8 @@ namespace AptekaInternetowa.Controllers
         [HttpPost]
         public IActionResult Register(RegisterVM registerVM)
         {
+
+            // todo dodać walidacjęformularza dla nazwy uzytkownika i hasło
             if (ModelState.IsValid)
             {
                 var user = new AppUser
@@ -75,7 +77,7 @@ namespace AptekaInternetowa.Controllers
                 if (result)
                     return RedirectToAction("Index", "Home");
 
-                ModelState.AddModelError("", "Użytkownik o podanym username już istnieje!");
+                ModelState.AddModelError("", "Użytkownik o podanej nazwie username już istnieje!");
             }
 
             return View(registerVM);

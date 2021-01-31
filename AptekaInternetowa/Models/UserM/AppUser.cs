@@ -12,6 +12,6 @@ namespace AptekaInternetowa.Models.UserM
         public string Password { get; set; }
 
         //sekcja odwołania do kolekcji Zamowień
-        public List<Zamowienie> Zamowienia { get; set; }
+        public List<Zamowienie> Zamowienia { get; set; } = new List<Zamowienie>();
     }
 }

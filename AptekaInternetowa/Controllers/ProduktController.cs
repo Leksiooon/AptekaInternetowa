@@ -1,7 +1,11 @@
 ﻿using AptekaInternetowa.Models.ProduktM;
+using AptekaInternetowa.Models.UserM;
 using AptekaInternetowa.Models.ViewModels;
 using AptekaInternetowa.Models.ZamowienieElementM;
+using AptekaInternetowa.Models.ZamowienieM;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Linq;
 using System.Security.Claims;
 
@@ -9,14 +13,17 @@ namespace AptekaInternetowa.Controllers
 {
     public class ProduktController : Controller
     {
-
-        private readonly IZamowienieElementRepository _zamowienieElement;
         private readonly IProduktRepository _produktRepository;
+        private readonly IAppUserRepository _appUserRepository;
+        private readonly IZamowienieElementRepository _zamowienieElementRepository;
+        private readonly IZamowienieRepository _zamowienieRepository;
 
-        public ProduktController(IZamowienieElementRepository zamowienieElement, IProduktRepository produktRepository)
+        public ProduktController(IZamowienieElementRepository zamowienieElementRepository, IProduktRepository produktRepository, IAppUserRepository appUserRepository, IZamowienieRepository zamowienieRepository)
         {
-            _zamowienieElement = zamowienieElement;
             _produktRepository = produktRepository;
+            _appUserRepository = appUserRepository;
+            _zamowienieElementRepository = zamowienieElementRepository;
+            _zamowienieRepository = zamowienieRepository;
         }
 
         public IActionResult Szczegoly(int id)
@@ -35,6 +42,7 @@ namespace AptekaInternetowa.Controllers
             return View(SzczegolyVM);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Add(SzczegolyVM szczegolyVM)
         {
@@ -42,13 +50,30 @@ namespace AptekaInternetowa.Controllers
             {
                 var userId = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
 
+                var user = _appUserRepository.GetAppUserById(Convert.ToInt16(userId));
+                var zamowienie = (user.Zamowienia.Find(x => x.Status == ZamowienieType.Otwarte));
+
+                if (zamowienie == null)
+                {
+                    zamowienie = new Zamowienie
+                    {
+                        AppUser = user,
+                        Status = ZamowienieType.Otwarte,
+                        Wartosc = 0,
+                    };
+
+                    _zamowienieRepository.Add(zamowienie);
+                }
+
+                var produkt = _produktRepository.GetById(szczegolyVM.Produkt.Id);
                 var ZamowienieElement = new ZamowienieElement
                 {
                     Ilosc = szczegolyVM.Ilosc,
-                    Produkt = szczegolyVM.Produkt,
+                    Produkt = produkt,
+                    Zamowienie = zamowienie,
                 };
 
-                _zamowienieElement.Add(ZamowienieElement);
+                _zamowienieElementRepository.Add(ZamowienieElement);
             }
 
             return RedirectToAction("Szczegoly", "Produkt", new { id = szczegolyVM.Produkt.Id });

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace AptekaInternetowa.Models.UserM
 {
@@ -29,7 +27,10 @@ namespace AptekaInternetowa.Models.UserM
 
         public AppUser GetAppUserById(int Id)
         {
-            return _appDbContext.AppUser.FirstOrDefault(x => x.Id == Id);
+            return _appDbContext.AppUser
+                .Where(x => x.Id == Id)
+                .Include(x => x.Zamowienia)
+                .SingleOrDefault();
         }
 
         public AppUser GetAppUserByName(string UserName)

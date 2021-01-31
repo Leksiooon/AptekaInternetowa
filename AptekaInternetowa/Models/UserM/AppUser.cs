@@ -7,6 +7,7 @@ namespace AptekaInternetowa.Models.UserM
     {
         public int Id { get; set; }
         public string Username { get; set; }
+        // unique - set in onCreateDB
         public string Email { get; set; }
         public string Password { get; set; }
 

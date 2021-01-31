@@ -19,14 +19,14 @@
 
             <div class="row">
                 <form asp-controller="ZamowienieElement" asp-action="Add" method="post" role="form">
-                    @Html.HiddenFor(Model => Model.ilosc)
+                    @Html.HiddenFor(Model => Model.Ilosc)
                     @Html.HiddenFor(Model => Model.Produkt.Id)
 
                     <input type="submit" class="btn btn-primary" value="Dodaj" />
                 </form>
 
                 <button type="button" onclick="updatePlus()">+</button>
-                <input style="border: 3px solid black; border-radius: 8px; width: 40px;" type="tel" value= @Model.ilosc id="show"> 
+                <input style="border: 3px solid black; border-radius: 8px; width: 40px;" type="tel" value= @Model.Ilosc id="show"> 
                 <button type="button" onclick="updateMinus()">-</button>
             </div>
 

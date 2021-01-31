@@ -26,21 +26,5 @@ namespace AptekaInternetowa.Controllers
 
             return View(homeVM);
         }
-
-        public IActionResult Szczegoly(int id)
-        {
-            var produkt = _produktRepository.GetById(id);
-
-            if (produkt == null)
-                return NotFound();
-
-            var SzczegolyVM = new SzczegolyVM
-            {
-                Produkt = produkt,
-                ilosc = 1
-            };
-
-            return View(SzczegolyVM);
-        }
     }
 }

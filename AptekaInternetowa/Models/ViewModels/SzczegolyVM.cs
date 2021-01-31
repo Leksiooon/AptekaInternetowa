@@ -5,6 +5,6 @@ namespace AptekaInternetowa.Models.ViewModels
     public class SzczegolyVM
     {
         public Produkt Produkt { get; set; }
-        public int ilosc { get; set; }
+        public int Ilosc { get; set; }
     }
 }

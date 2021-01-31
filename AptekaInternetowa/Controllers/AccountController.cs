@@ -1,22 +1,22 @@
-﻿using AptekaInternetowa.Models.ViewModels;
-using Microsoft.AspNetCore.Identity;
+﻿using AptekaInternetowa.Models.UserM;
+using AptekaInternetowa.Models.ViewModels;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace AptekaInternetowa.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly IAppUserRepository _appUserRepository;
 
-        public AccountController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
+        public AccountController(IAppUserRepository appUserRepository)
         {
-            _signInManager = signInManager;
-            _userManager = userManager;
+            _appUserRepository = appUserRepository;
         }
 
         [HttpGet]
@@ -26,21 +26,28 @@ namespace AptekaInternetowa.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginVM loginVM)
+        public IActionResult Login(LoginVM loginVM)
         {
-            if (!ModelState.IsValid)
-                return View(loginVM);
-
-            var user = await _userManager.FindByNameAsync(loginVM.UserName);
-
-            if (user != null)
+            if (ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
-                if (result.Succeeded)
-                    return RedirectToAction("Index", "Home");
-            }
+                var user = _appUserRepository.GetAppUserByName(loginVM.UserName);
 
-            ModelState.AddModelError("", "Wprowadzone dane są niepoprawne!");
+                if (user != null  && user.Password == loginVM.Password)
+                {
+                    var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, user.Username),
+                        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
+                    };
+                    var identity = new ClaimsIdentity(
+                        claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    var principal = new ClaimsPrincipal(identity);
+                    var props = new AuthenticationProperties();
+                    HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, props).Wait();
+                    return RedirectToAction("ListOfUsers", "Account");
+                }
+                ModelState.AddModelError("", "Wpisane dane są niepoprawne!");
+            }
 
             return View(loginVM);
         }
@@ -53,26 +60,31 @@ namespace AptekaInternetowa.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterVM registerVM)
+        public IActionResult Register(RegisterVM registerVM)
         {
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser() { UserName = registerVM.UserName };
-                var result = await _userManager.CreateAsync(user, registerVM.Password);
+                var user = new AppUser
+                {
+                    Username = registerVM.UserName,
+                    Password = registerVM.Password
+                };
 
-                if (result.Succeeded)
+                var result = _appUserRepository.Add(user);
+
+                if (result)
                     return RedirectToAction("Index", "Home");
 
-                foreach (var item in result.Errors)
-                    ModelState.AddModelError("", item.Description);
+                ModelState.AddModelError("", "Użytkownik o podanym username już istnieje!");
             }
 
             return View(registerVM);
         }
 
+        [HttpPost]
         public async Task<IActionResult> Logout()
         {
-            await _signInManager.SignOutAsync();
+            await HttpContext.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
     }

@@ -1,4 +1,5 @@
 ﻿using AptekaInternetowa.Models.ProduktM;
+using AptekaInternetowa.Models.UserM;
 using AptekaInternetowa.Models.ZamowienieElementM;
 using AptekaInternetowa.Models.ZamowienieM;
 using Microsoft.AspNetCore.Identity;
@@ -16,5 +17,13 @@ namespace AptekaInternetowa.Models
         public DbSet<Produkt> Produkty { get; set; }
         public DbSet<ZamowienieElement> ZamowienieElement { get; set; }
         public DbSet<Zamowienie> Zamowienie { get; set; }
+        public DbSet<AppUser> AppUser { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            //builder.Entity<AppUser>()
+            //    .HasIndex(u => u.Email)
+            //    .IsUnique();
+        }
     }
 }

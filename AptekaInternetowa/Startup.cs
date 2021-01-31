@@ -1,5 +1,6 @@
 ﻿using AptekaInternetowa.Models;
 using AptekaInternetowa.Models.ProduktM;
+using AptekaInternetowa.Models.UserM;
 using AptekaInternetowa.Models.ZamowienieElementM;
 using AptekaInternetowa.Models.ZamowienieM;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -36,6 +37,7 @@ namespace AptekaInternetowa
             services.AddTransient<IProduktRepository, ProduktRepository>();
             services.AddTransient<IZamowienieElementRepository, ZamowienieElementRepository>();
             services.AddTransient<IZamowienieRepository, ZamowienieRepository>();
+            services.AddTransient<IAppUserRepository, AppUserRepository>();
             services.AddMvc();
         }
 

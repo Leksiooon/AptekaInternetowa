@@ -18,7 +18,7 @@ namespace AptekaInternetowa.Controllers
         {
             var ZamowienieElement = new ZamowienieElement
             {
-                Ilosc = szczegolyVM.ilosc,
+                Ilosc = szczegolyVM.Ilosc,
                 Produkt = szczegolyVM.Produkt
             };
 

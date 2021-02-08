@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AptekaInternetowa.Models.ZamowienieM;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace AptekaInternetowa.Models.UserM
@@ -36,6 +37,14 @@ namespace AptekaInternetowa.Models.UserM
         public AppUser GetAppUserByName(string UserName)
         {
             return _appDbContext.AppUser.FirstOrDefault(x => x.Username == UserName);
+        }
+
+        public Zamowienie GetOtwarteZamowienieUseraOId(int Id)
+        {
+              return _appDbContext.Zamowienie
+                .Where(x => x.AppUser.Id == Id)
+                .Where(x => x.Status == ZamowienieType.Otwarte)
+                .SingleOrDefault();
         }
 
         public void Remove(AppUser appUser)

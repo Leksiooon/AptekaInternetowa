@@ -1,4 +1,4 @@
-﻿@model AptekaInternetowa.Models.ViewModels.RegisterVM
+﻿@model AptekaInternetowa.Models.ViewModels.GlobalVM
 
 <h2>
     Jeśli posiadasz już konto,
@@ -11,32 +11,32 @@
 
     <div class="form-group">
         <div class="row">
-            <label asp-for="UserName" class="col-2 col-form-label"></label>
+            <label asp-for="@Model.RegisterVM.UserName" class="col-2 col-form-label"></label>
             <div class="col-8">
-                <input asp-for="UserName" class="form-control" />
+                <input asp-for="@Model.RegisterVM.UserName" class="form-control" />
             </div>
         </div>
-        <span asp-validation-for="UserName" class="text-danger"></span>
+        <span asp-validation-for="@Model.RegisterVM.UserName" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <div class="row">
-            <label asp-for="Password" class="col-2 col-form-label"></label>
+            <label asp-for="@Model.RegisterVM.Password" class="col-2 col-form-label"></label>
             <div class="col-8">
-                <input asp-for="Password" class="form-control" />
+                <input asp-for="@Model.RegisterVM.Password" class="form-control" />
             </div>
         </div>
-        <span asp-validation-for="Password" class="text-danger"></span>
+        <span asp-validation-for="@Model.RegisterVM.Password" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <div class="row">
-            <label asp-for="ComparePassword" class="col-2 col-form-label"></label>
+            <label asp-for="@Model.RegisterVM.ComparePassword" class="col-2 col-form-label"></label>
             <div class="col-8">
-                <input asp-for="ComparePassword" class="form-control" />
+                <input asp-for="@Model.RegisterVM.ComparePassword" class="form-control" />
             </div>
         </div>
-        <span asp-validation-for="ComparePassword" class="text-danger"></span>
+        <span asp-validation-for="@Model.RegisterVM.ComparePassword" class="text-danger"></span>
     </div>
 
     <div class="form-group">

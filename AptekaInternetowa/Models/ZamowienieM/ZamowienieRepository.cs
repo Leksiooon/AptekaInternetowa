@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 
 namespace AptekaInternetowa.Models.ZamowienieM
@@ -20,7 +21,9 @@ namespace AptekaInternetowa.Models.ZamowienieM
 
         public Zamowienie GetById(int Id)
         {
-            return _appDbContext.Zamowienie.FirstOrDefault(x => x.Id == Id);
+            return _appDbContext.Zamowienie
+                //.Include(x => x.ElementyZamowienia)
+                .FirstOrDefault(x => x.Id == Id);
         }
 
         public void Remove(Zamowienie zamowienie)

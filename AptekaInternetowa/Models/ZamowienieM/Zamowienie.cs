@@ -16,6 +16,17 @@ namespace AptekaInternetowa.Models.ZamowienieM
         //sekcja odwołania do kolekcji z Zamowienie
         public List<ZamowienieElement> ElementyZamowienia { get; set; }
 
-        //public double PoliczWartosc() { }
+        public double PoliczWartosc()
+        {
+            double wartosc = 0;
+            if (this.ElementyZamowienia == null)
+                return 0;
+
+            foreach (var item in this.ElementyZamowienia)
+                wartosc += item.Produkt.Cena * item.Ilosc;
+
+            this.Wartosc = wartosc;
+            return wartosc;
+        }
     }
 }

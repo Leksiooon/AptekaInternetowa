@@ -24,6 +24,8 @@ namespace AptekaInternetowa.Models
             //builder.Entity<AppUser>()
             //    .HasIndex(u => u.Email)
             //    .IsUnique();
+
+
         }
     }
 }

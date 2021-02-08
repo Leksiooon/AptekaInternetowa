@@ -22,7 +22,12 @@ namespace AptekaInternetowa.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            return View();
+            var globalVM = new GlobalVM()
+            {
+                Title = "Logowanie",
+            };
+
+            return View(globalVM);
         }
 
         [HttpPost]
@@ -49,14 +54,26 @@ namespace AptekaInternetowa.Controllers
                 ModelState.AddModelError("", "Wpisane dane są niepoprawne!");
             }
 
-            return View(loginVM);
+            var globalVM = new GlobalVM()
+            {
+                Title = "Logowanie",
+                LoginVM = loginVM,
+            };
+
+            return View(globalVM);
         }
 
 
         [HttpGet]
         public IActionResult Register()
         {
-            return View(new RegisterVM());
+            var globalVM = new GlobalVM()
+            {
+                Title = "Rejestracja",
+                RegisterVM = new RegisterVM(),
+            };
+
+            return View(globalVM);
         }
 
         [HttpPost]

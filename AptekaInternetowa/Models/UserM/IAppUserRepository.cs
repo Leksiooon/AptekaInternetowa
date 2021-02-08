@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AptekaInternetowa.Models.ZamowienieM;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,5 +13,6 @@ namespace AptekaInternetowa.Models.UserM
         void Update(AppUser appUser);
         AppUser GetAppUserById(int Id);
         AppUser GetAppUserByName(string UserName);
+        Zamowienie GetOtwarteZamowienieUseraOId(int Id);
     }
 }

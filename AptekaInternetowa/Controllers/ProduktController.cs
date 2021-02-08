@@ -39,7 +39,23 @@ namespace AptekaInternetowa.Controllers
                 Ilosc = 1
             };
 
-            return View(SzczegolyVM);
+            var navBarVM = new NavBarVM();
+            var userId = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
+            if (userId != null)
+            {
+                var zamowienie = _appUserRepository.GetOtwarteZamowienieUseraOId(Convert.ToInt32(userId));
+                zamowienie.PoliczWartosc();
+                navBarVM.Zamowienie = zamowienie;
+            }
+
+            var globalVM = new GlobalVM()
+            {
+                Title = produkt.Nazwa.ToString(),
+                SzczegolyVM = SzczegolyVM,
+                NavBarVM = navBarVM,
+            };
+
+            return View(globalVM);
         }
 
         [Authorize]
@@ -50,8 +66,8 @@ namespace AptekaInternetowa.Controllers
             {
                 var userId = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
 
-                var user = _appUserRepository.GetAppUserById(Convert.ToInt16(userId));
-                var zamowienie = (user.Zamowienia.Find(x => x.Status == ZamowienieType.Otwarte));
+                var user = _appUserRepository.GetAppUserById(Convert.ToInt32(userId));
+                var zamowienie = _appUserRepository.GetOtwarteZamowienieUseraOId(user.Id);
 
                 if (zamowienie == null)
                 {
@@ -77,13 +93,6 @@ namespace AptekaInternetowa.Controllers
             }
 
             return RedirectToAction("Szczegoly", "Produkt", new { id = szczegolyVM.Produkt.Id });
-
-
-
-
-
         }
-
-
     }
 }

@@ -50,7 +50,7 @@ namespace AspNetCore
             WriteLiteral("\r\n<div class=\"container\" style=\"padding: 15px\">\r\n    <div class=\"row\">\r\n        <div class=\"col-4\">\r\n            ");
             EndContext();
             BeginContext(166, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6861a81aeb0e4de2a972c7a77c5204e1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "02a133cb0dd0425cb13283ae77e633ea", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -106,7 +106,7 @@ AddHtmlAttributeValue("", 185, Model.SzczegolyVM.Produkt.ZdjecieUrl, 185, 37, fa
             WriteLiteral("</p>\r\n\r\n            <div class=\"col-5\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-5\">\r\n                        ");
             EndContext();
             BeginContext(806, 347, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da1315a5ed45411b9f2e3cfdd4ec94a2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5972e776ba79471abb0048ec4083562d", async() => {
                 BeginContext(880, 30, true);
                 WriteLiteral("\r\n                            ");
                 EndContext();

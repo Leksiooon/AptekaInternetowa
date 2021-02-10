@@ -24,33 +24,20 @@ namespace AptekaInternetowa.Controllers
 
         public IActionResult Index()
         {
+            var navBarVM = new NavBarVM();
+            var userId = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
+            if (userId != null)
+            {
+                var zamowienie = _appUserRepository.GetOtwarteZamowienieUseraOId(Convert.ToInt32(userId));
+                navBarVM.Zamowienie = zamowienie;
+            }
+
             var produkty = _produktRepository.GetAll();
 
             var homeVM = new HomeVM()
             {
                 Produkty = produkty.ToList(),
             };
-
-            var navBarVM = new NavBarVM();
-            var userId = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
-            var user = _appUserRepository.GetAppUserById(Convert.ToInt32(userId));
-            if (userId != null)
-            {
-                var zamowienie = _appUserRepository.GetOtwarteZamowienieUseraOId(Convert.ToInt32(userId));
-                if (zamowienie == null)
-                {
-                    zamowienie = new Zamowienie
-                    {
-                        AppUser = user,
-                        Status = ZamowienieType.Otwarte,
-                        Wartosc = 0,
-                    };
-
-                    _zamowienieRepository.Add(zamowienie);
-                }
-                zamowienie.PoliczWartosc();
-                navBarVM.Zamowienie = zamowienie;
-            }
 
             GlobalVM globalVM = new GlobalVM()
             {

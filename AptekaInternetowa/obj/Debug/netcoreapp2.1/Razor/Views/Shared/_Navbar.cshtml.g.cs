@@ -56,7 +56,7 @@ namespace AspNetCore
             WriteLiteral("\r\n<nav class=\"navbar navbar-expand-lg navbar-light\" style=\"background-color: #e3f2fd;\">\r\n    <div class=\"container\">\r\n        ");
             EndContext();
             BeginContext(179, 82, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6f2083f87f9e4bd0898d42540d27e3c0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9eb893397eb9462db13e142307473f82", async() => {
                 BeginContext(244, 13, true);
                 WriteLiteral("Strona główna");
                 EndContext();
@@ -81,7 +81,7 @@ namespace AspNetCore
             WriteLiteral("\r\n\r\n        <div class=\"collapse navbar-collapse\">\r\n            ");
             EndContext();
             BeginContext(325, 239, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9ba14f0ea6c44118fa992a9fcdbc549", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "703c90bdadb147769ace3408b8c28423", async() => {
                 BeginContext(377, 180, true);
                 WriteLiteral("\r\n                <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\r\n                <button class=\"btn btn-success\" type=\"submit\">Search</button>\r\n            ");
                 EndContext();
@@ -125,7 +125,7 @@ namespace AspNetCore
             WriteLiteral("</h6>\r\n                    </li>\r\n                    <li class=\"nav-item\">\r\n                        ");
             EndContext();
             BeginContext(884, 256, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5c8854957f1c470ea0fd47c8acb6f569", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d603ebc92953402fbc58f388e1753ac0", async() => {
                 BeginContext(966, 167, true);
                 WriteLiteral("\r\n                            <a href=\"javascript:{}\" onclick=\"document.getElementById(\'form_logout\').submit();\" class=\"nav-link\">Wyloguj</a>\r\n                        ");
                 EndContext();
@@ -174,7 +174,7 @@ namespace AspNetCore
             WriteLiteral("                    <li class=\"nav-item\">\r\n                        ");
             EndContext();
             BeginContext(1460, 77, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "78e8abed67df4b75bd9181e4119473c8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "892f5fc33fb24845a30616c951a890f0", async() => {
                 BeginContext(1524, 9, true);
                 WriteLiteral("Logowanie");
                 EndContext();

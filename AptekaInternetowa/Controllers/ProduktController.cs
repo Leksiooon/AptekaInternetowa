@@ -66,20 +66,7 @@ namespace AptekaInternetowa.Controllers
             {
                 var userId = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
 
-                var user = _appUserRepository.GetAppUserById(Convert.ToInt32(userId));
-                var zamowienie = _appUserRepository.GetOtwarteZamowienieUseraOId(user.Id);
-
-                if (zamowienie == null)
-                {
-                    zamowienie = new Zamowienie
-                    {
-                        AppUser = user,
-                        Status = ZamowienieType.Otwarte,
-                        Wartosc = 0,
-                    };
-
-                    _zamowienieRepository.Add(zamowienie);
-                }
+                var zamowienie = _appUserRepository.GetOtwarteZamowienieUseraOId(Convert.ToInt32(userId));
 
                 var produkt = _produktRepository.GetById(szczegolyVM.Produkt.Id);
                 var ZamowienieElement = new ZamowienieElement

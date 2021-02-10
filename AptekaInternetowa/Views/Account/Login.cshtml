@@ -1,4 +1,4 @@
-﻿@model AptekaInternetowa.Models.ViewModels.LoginVM
+﻿@model AptekaInternetowa.Models.ViewModels.GlobalVM
 
 <h2>
     Przed zamówieniem produktów zaloguj się lub
@@ -10,15 +10,23 @@
     <div asp-validation-summary="All" class="text-danger"></div>
 
     <div class="form-group">
-        <label asp-for="UserName"></label>
-        <input asp-for="UserName" />
-        <span asp-validation-for="UserName" class="text-danger"></span>
+        <div class="row">
+            <label asp-for="@Model.LoginVM.UserName" class="col-2 col-form-label"></label>
+            <div class="col-8">
+                <input asp-for="@Model.LoginVM.UserName" class="form-control" />
+            </div>
+        </div>
+        <span asp-validation-for="@Model.LoginVM.UserName" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="Password"></label>
-        <input asp-for="Password" />
-        <span asp-validation-for="Password" class="text-danger"></span>
+        <div class="row">
+            <label asp-for="@Model.LoginVM.Password" class="col-2 col-form-label"></label>
+            <div class="col-8">
+                <input asp-for="@Model.LoginVM.Password" class="form-control" />
+            </div>
+        </div>
+        <span asp-validation-for="@Model.LoginVM.Password" class="text-danger"></span>
     </div>
 
     <div class="form-group">

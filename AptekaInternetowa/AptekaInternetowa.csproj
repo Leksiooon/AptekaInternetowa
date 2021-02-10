@@ -5,6 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20210108215514_InitialMigration.cs" />
+    <Compile Remove="Migrations\20210108215514_InitialMigration.Designer.cs" />
+    <Compile Remove="Migrations\20210114211316_IdentityUser.cs" />
+    <Compile Remove="Migrations\20210114211316_IdentityUser.Designer.cs" />
+    <Compile Remove="Migrations\20210119123134_UtworzenieZamowienieElement.cs" />
+    <Compile Remove="Migrations\20210119123134_UtworzenieZamowienieElement.Designer.cs" />
+    <Compile Remove="Migrations\20210130221554_Initial.cs" />
+    <Compile Remove="Migrations\20210130221554_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20210130221813_Initial.cs" />
+    <Compile Remove="Migrations\20210130221813_Initial.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\lib\bootstrap\.github\CONTRIBUTING.md" />
     <None Include="wwwroot\lib\bootstrap\.github\ISSUE_TEMPLATE.md" />
     <None Include="wwwroot\lib\jquery\.github\ISSUE_TEMPLATE.md" />
@@ -16,6 +29,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
+    <PackageReference Include="ServiceStack.Interfaces" Version="5.10.4" />
   </ItemGroup>
 
 </Project>

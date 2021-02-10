@@ -1,0 +1,50 @@
+﻿@model AptekaInternetowa.Models.ViewModels.GlobalVM
+
+<div class="container" style="padding: 15px">
+    <div class="row">
+        <div class="col-4">
+            <img src="~/images/@Model.SzczegolyVM.Produkt.ZdjecieUrl" alt="" />
+        </div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-8">
+                    <h4>@Model.SzczegolyVM.Produkt.Nazwa</h4>
+                </div>
+                <div class="col-4">
+                    <p>Producent: @Model.SzczegolyVM.Produkt.Producent</p>
+                </div>
+            </div>
+
+            <p><h6>Cena za sztukę:</h6> @Model.SzczegolyVM.Produkt.Cena</p>
+
+            <div class="col-5">
+                <div class="row">
+                    <div class="col-5">
+                        <form asp-controller="Produkt" asp-action="Add" method="post" role="form">
+                            @Html.HiddenFor(x => x.SzczegolyVM.Ilosc)
+                            @Html.HiddenFor(x => x.SzczegolyVM.Produkt.Id)
+
+                            <input type="submit" class="btn btn-primary" value="Dodaj" />
+                        </form>
+                    </div>
+
+                    <div class="col-7">
+                        <button type="button" class="btn btn-bd-primary" onclick="updatePlus()">+</button>
+                        <input style="border: 3px solid black; border-radius: 8px; width: 40px;" type="tel" value=@Model.SzczegolyVM.Ilosc id="show">
+                        <button type="button" class="btn btn-bd-primary" onclick="updateMinus()">-</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <p><h6>Działanie:</h6> @Model.SzczegolyVM.Produkt.Dzialanie</p>
+            <p><h6>Wskazania:</h6> @Model.SzczegolyVM.Produkt.Wskazania</p>
+        </div>
+    </div>
+
+    <p><h5>Dawkowanie:</h5> @Model.SzczegolyVM.Produkt.Dawkowanie</p>
+    <p><h5>Skład:</h5> @Model.SzczegolyVM.Produkt.Sklad</p>
+    <p><h5>Przeciwwskazania:</h5> @Model.SzczegolyVM.Produkt.Przeciwwskazania</p>
+    <p><h5>Dodatkowe informacje:</h5> @Model.SzczegolyVM.Produkt.DodatkoweInformacje</p>
+
+</div>

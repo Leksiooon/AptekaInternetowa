@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,12 +15,12 @@ namespace AptekaInternetowa.Models.ProduktM
             _appDbContext = appDbContext;
         }
 
-        public Produkt PobierzProduktOId(int produktId)
+        public Produkt GetById(int produktId)
         {
             return _appDbContext.Produkty.FirstOrDefault(s => s.Id == produktId);
         }
 
-        public IEnumerable<Produkt> PobierzWszystkieProdukty()
+        public IEnumerable<Produkt> GetAll()
         {
             return _appDbContext.Produkty;
         }

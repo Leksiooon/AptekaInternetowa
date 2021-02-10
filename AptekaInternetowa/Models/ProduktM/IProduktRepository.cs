@@ -4,7 +4,7 @@ namespace AptekaInternetowa.Models.ProduktM
 {
     public interface IProduktRepository
     {
-        IEnumerable<Produkt> PobierzWszystkieProdukty();
-        Produkt PobierzProduktOId(int produktId);
+        IEnumerable<Produkt> GetAll();
+        Produkt GetById(int produktId);
     }
 }

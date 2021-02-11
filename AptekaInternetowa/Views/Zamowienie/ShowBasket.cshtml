@@ -1,0 +1,29 @@
+﻿@model AptekaInternetowa.Models.ViewModels.GlobalVM
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nazwa</th>
+            <th scope="col">Cena</th>
+            <th scope="col">Ilość</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @{ int i = 1; }
+        @foreach (var item in Model.NavBarVM.Zamowienie.ElementyZamowienia)
+        {
+            <tr>
+                <th scope="row">@i</th>
+                <td>@item.Produkt.Nazwa</td>
+                <td>@item.Produkt.Cena</td>
+                <td>@item.Ilosc</td>
+                @{ i++; }
+            </tr>
+        }
+
+
+    </tbody>
+</table>

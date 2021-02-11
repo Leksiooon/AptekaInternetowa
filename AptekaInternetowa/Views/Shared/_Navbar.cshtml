@@ -23,7 +23,7 @@
                         </form>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Koszyk @Model.Zamowienie.Wartosc zł</a>
+                        <a asp-action="ShowBasket" asp-controller="Zamowienie" asp-route-id="@Model.Zamowienie.Id" class="nav-link" >Koszyk @Model.Zamowienie.Wartosc zł</a>
                     </li>
                 }
                 else

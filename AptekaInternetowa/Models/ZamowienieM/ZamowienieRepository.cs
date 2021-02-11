@@ -21,9 +21,14 @@ namespace AptekaInternetowa.Models.ZamowienieM
 
         public Zamowienie GetById(int Id)
         {
-            return _appDbContext.Zamowienie
-                //.Include(x => x.ElementyZamowienia)
-                .FirstOrDefault(x => x.Id == Id);
+            var zamowienie = _appDbContext.Zamowienie
+                .Where(x => x.Id == Id)
+                .Include(x => x.ElementyZamowienia).ThenInclude(x => x.Produkt)
+                .FirstOrDefault();
+
+            zamowienie.PoliczWartosc();
+
+            return zamowienie;
         }
 
         public void Remove(Zamowienie zamowienie)

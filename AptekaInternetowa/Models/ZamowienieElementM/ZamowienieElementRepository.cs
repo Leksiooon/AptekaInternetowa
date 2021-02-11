@@ -27,5 +27,11 @@ namespace AptekaInternetowa.Models.ZamowienieElementM
             _appDbContext.ZamowienieElement.Remove(zamowienieElement);
             _appDbContext.SaveChanges();
         }
+
+        public void Update(ZamowienieElement zamowienieElement)
+        {
+            _appDbContext.Update(zamowienieElement);
+            _appDbContext.SaveChanges();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using AptekaInternetowa.Models.UserM;
+﻿using AptekaInternetowa.Models.ProduktM;
+using AptekaInternetowa.Models.UserM;
 using AptekaInternetowa.Models.ZamowienieElementM;
 using System.Collections.Generic;
 
@@ -27,6 +28,20 @@ namespace AptekaInternetowa.Models.ZamowienieM
 
             this.Wartosc = wartosc;
             return wartosc;
+        }
+
+        public ZamowienieElement ZnajdzZamowienieElement(Produkt produkt)
+        {
+            if (this.ElementyZamowienia == null)
+                return null;
+
+            foreach (var item in this.ElementyZamowienia)
+            {
+                if (item.Produkt == produkt)
+                    return item;
+            }
+
+            return null;
         }
     }
 }

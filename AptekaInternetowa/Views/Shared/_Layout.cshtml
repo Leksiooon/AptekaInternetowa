@@ -4,8 +4,9 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="~/content/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/content/site.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
 
     <script type="text/javascript" src="~/js/all.js"></script>
 
@@ -13,7 +14,7 @@
 </head>
 <body>
     <div id="page-container">
-        <partial name="_Navbar.cshtml" model="@Model.NavBarVM"/>
+        <partial name="_Navbar.cshtml" model="@Model.NavBarVM" />
         <div class="container" id="content-wrap">
             @RenderBody()
         </div>

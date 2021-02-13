@@ -33,5 +33,7 @@ namespace AptekaInternetowa.Controllers
 
             return View(globalVM);
         }
+
+
     }
 }

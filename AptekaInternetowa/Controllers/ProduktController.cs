@@ -89,5 +89,47 @@ namespace AptekaInternetowa.Controllers
 
             return RedirectToAction("Szczegoly", "Produkt", new { id = szczegolyVM.Produkt.Id });
         }
+
+        [Authorize]
+        public IActionResult Remove(int zamowienieElementId)
+        {
+            var zamowienieElement = _zamowienieElementRepository.GetById(zamowienieElementId);
+
+            if (zamowienieElement != null)
+                _zamowienieElementRepository.Remove(zamowienieElement);
+
+            return RedirectToAction("ShowBasket", "Zamowienie", new { id = zamowienieElement.Zamowienie.Id });
+        }
+
+        [Authorize]
+        public IActionResult Minus(int zamowienieElementId)
+        {
+            var zamowienieElement = _zamowienieElementRepository.GetById(zamowienieElementId);
+
+            if (zamowienieElement.Ilosc == 1)
+                return RedirectToAction("Remove", new { zamowienieElementId = zamowienieElementId });
+
+            if (zamowienieElement != null)
+            {
+                zamowienieElement.Ilosc -= 1;
+                _zamowienieElementRepository.Update(zamowienieElement);
+            }
+
+            return RedirectToAction("ShowBasket", "Zamowienie", new { id = zamowienieElement.Zamowienie.Id });
+        }
+
+        [Authorize]
+        public IActionResult Plus(int zamowienieElementId)
+        {
+            var zamowienieElement = _zamowienieElementRepository.GetById(zamowienieElementId);
+
+            if (zamowienieElement != null && zamowienieElement.Ilosc <= 10)
+            {
+                zamowienieElement.Ilosc += 1;
+                _zamowienieElementRepository.Update(zamowienieElement);
+            }
+
+            return RedirectToAction("ShowBasket", "Zamowienie", new { id = zamowienieElement.Zamowienie.Id });
+        }
     }
 }

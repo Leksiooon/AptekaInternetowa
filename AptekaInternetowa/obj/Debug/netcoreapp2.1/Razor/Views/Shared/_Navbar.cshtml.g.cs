@@ -58,7 +58,7 @@ namespace AspNetCore
             WriteLiteral("\r\n<nav class=\"navbar navbar-expand-lg navbar-light\" style=\"background-color: #e3f2fd;\">\r\n    <div class=\"container\">\r\n        ");
             EndContext();
             BeginContext(179, 82, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d35532bcb3c3439f88dc84f5229883d0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7018b0febf544883b35724e13b6f7275", async() => {
                 BeginContext(244, 13, true);
                 WriteLiteral("Strona główna");
                 EndContext();
@@ -83,7 +83,7 @@ namespace AspNetCore
             WriteLiteral("\r\n\r\n        <div class=\"collapse navbar-collapse\">\r\n            ");
             EndContext();
             BeginContext(325, 239, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87bdb9e18d474fe0929a3baee3ad04f9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f141a51e132046e089828f78890bd28b", async() => {
                 BeginContext(377, 180, true);
                 WriteLiteral("\r\n                <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\r\n                <button class=\"btn btn-success\" type=\"submit\">Search</button>\r\n            ");
                 EndContext();
@@ -127,7 +127,7 @@ namespace AspNetCore
             WriteLiteral("</h6>\r\n                    </li>\r\n                    <li class=\"nav-item\">\r\n                        ");
             EndContext();
             BeginContext(884, 256, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "338747bd6d6b49cca121e05789a7ba6b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9076d52cda62453a803289c2829c008f", async() => {
                 BeginContext(966, 167, true);
                 WriteLiteral("\r\n                            <a href=\"javascript:{}\" onclick=\"document.getElementById(\'form_logout\').submit();\" class=\"nav-link\">Wyloguj</a>\r\n                        ");
                 EndContext();
@@ -156,7 +156,7 @@ namespace AspNetCore
             WriteLiteral("\r\n                    </li>\r\n                    <li class=\"nav-item\">\r\n                        ");
             EndContext();
             BeginContext(1236, 148, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "88feafdbdee7447e884df82958db800c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "926619628a7a48b1b786ffd8b68a4ebd", async() => {
                 BeginContext(1345, 7, true);
                 WriteLiteral("Koszyk ");
                 EndContext();
@@ -214,7 +214,7 @@ namespace AspNetCore
             WriteLiteral("                    <li class=\"nav-item\">\r\n                        ");
             EndContext();
             BeginContext(1540, 77, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dd45096067de43fa8dc9b9f35ad48a17", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7cdb7bc38e5e4b96aabe4dc939914185", async() => {
                 BeginContext(1604, 9, true);
                 WriteLiteral("Logowanie");
                 EndContext();

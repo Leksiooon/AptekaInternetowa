@@ -1,6 +1,5 @@
 ﻿@model AptekaInternetowa.Models.ViewModels.GlobalVM
 
-
 <table class="table">
     <thead class="thead-dark">
         <tr>
@@ -8,6 +7,9 @@
             <th scope="col">Nazwa</th>
             <th scope="col">Cena</th>
             <th scope="col">Ilość</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +23,21 @@
                 <td>@item.Produkt.Cena</td>
                 <td>@item.Ilosc</td>
                 @{ i++; }
+            <td>
+                <a class="btn btn-light" asp-action="Plus" asp-controller="Produkt" asp-route-zamowienieElementId="@item.Id">
+                    <span class="fa fa-plus"></span>
+                </a>
+            </td>
+                <td>
+                    <a class="btn btn-light" asp-action="Minus" asp-controller="Produkt" asp-route-zamowienieElementId="@item.Id">
+                        <span class="fa fa-minus"></span>
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-light" asp-action="Remove" asp-controller="Produkt" asp-route-zamowienieElementId="@item.Id">
+                        <span class="fa fa-trash-alt"></span>
+                    </a>
+                </td>
             </tr>
         }
 

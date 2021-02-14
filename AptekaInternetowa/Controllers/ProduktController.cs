@@ -65,34 +65,71 @@ namespace AptekaInternetowa.Controllers
             if (ModelState.IsValid)
             {
                 var userId = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
+                var produkt = _produktRepository.GetById(szczegolyVM.Produkt.Id);
 
-                var user = _appUserRepository.GetAppUserById(Convert.ToInt32(userId));
-                var zamowienie = _appUserRepository.GetOtwarteZamowienieUseraOId(user.Id);
-
-                if (zamowienie == null)
+                var zamowienie = _appUserRepository.GetOtwarteZamowienieUseraOId(Convert.ToInt32(userId));
+                var zamowienieElement = zamowienie.ZnajdzZamowienieElement(produkt);
+                if (zamowienieElement != null)
                 {
-                    zamowienie = new Zamowienie
+                    zamowienieElement.Ilosc += szczegolyVM.Ilosc;
+                    _zamowienieElementRepository.Update(zamowienieElement);
+                }
+                else
+                {
+                    var ZamowienieElement = new ZamowienieElement
                     {
-                        AppUser = user,
-                        Status = ZamowienieType.Otwarte,
-                        Wartosc = 0,
+                        Ilosc = szczegolyVM.Ilosc,
+                        Produkt = produkt,
+                        Zamowienie = zamowienie,
                     };
 
-                    _zamowienieRepository.Add(zamowienie);
+                    _zamowienieElementRepository.Add(ZamowienieElement);
                 }
-
-                var produkt = _produktRepository.GetById(szczegolyVM.Produkt.Id);
-                var ZamowienieElement = new ZamowienieElement
-                {
-                    Ilosc = szczegolyVM.Ilosc,
-                    Produkt = produkt,
-                    Zamowienie = zamowienie,
-                };
-
-                _zamowienieElementRepository.Add(ZamowienieElement);
             }
 
             return RedirectToAction("Szczegoly", "Produkt", new { id = szczegolyVM.Produkt.Id });
+        }
+
+        [Authorize]
+        public IActionResult Remove(int zamowienieElementId)
+        {
+            var zamowienieElement = _zamowienieElementRepository.GetById(zamowienieElementId);
+
+            if (zamowienieElement != null)
+                _zamowienieElementRepository.Remove(zamowienieElement);
+
+            return RedirectToAction("ShowBasket", "Zamowienie", new { id = zamowienieElement.Zamowienie.Id });
+        }
+
+        [Authorize]
+        public IActionResult Minus(int zamowienieElementId)
+        {
+            var zamowienieElement = _zamowienieElementRepository.GetById(zamowienieElementId);
+
+            if (zamowienieElement.Ilosc == 1)
+                return RedirectToAction("Remove", new { zamowienieElementId = zamowienieElementId });
+
+            if (zamowienieElement != null)
+            {
+                zamowienieElement.Ilosc -= 1;
+                _zamowienieElementRepository.Update(zamowienieElement);
+            }
+
+            return RedirectToAction("ShowBasket", "Zamowienie", new { id = zamowienieElement.Zamowienie.Id });
+        }
+
+        [Authorize]
+        public IActionResult Plus(int zamowienieElementId)
+        {
+            var zamowienieElement = _zamowienieElementRepository.GetById(zamowienieElementId);
+
+            if (zamowienieElement != null && zamowienieElement.Ilosc <= 10)
+            {
+                zamowienieElement.Ilosc += 1;
+                _zamowienieElementRepository.Update(zamowienieElement);
+            }
+
+            return RedirectToAction("ShowBasket", "Zamowienie", new { id = zamowienieElement.Zamowienie.Id });
         }
     }
 }

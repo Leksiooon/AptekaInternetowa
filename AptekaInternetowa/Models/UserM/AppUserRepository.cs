@@ -41,11 +41,26 @@ namespace AptekaInternetowa.Models.UserM
 
         public Zamowienie GetOtwarteZamowienieUseraOId(int Id)
         {
-              return _appDbContext.Zamowienie
-                .Where(x => x.AppUser.Id == Id)
-                .Where(x => x.Status == ZamowienieType.Otwarte)
-                .Include(x => x.ElementyZamowienia).ThenInclude(x => x.Produkt)
-                .SingleOrDefault();
+            var zamowienie = _appDbContext.Zamowienie
+               .Where(x => x.AppUser.Id == Id)
+               .Where(x => x.Status == ZamowienieType.Otwarte)
+               .Include(x => x.ElementyZamowienia).ThenInclude(x => x.Produkt)
+               .SingleOrDefault();
+
+            if (zamowienie == null)
+            {
+                zamowienie = new Zamowienie
+                {
+                    AppUser = GetAppUserById(Id),
+                    Status = ZamowienieType.Otwarte,
+                    Wartosc = 0,
+                };
+                _appDbContext.Zamowienie.Add(zamowienie);
+                _appDbContext.SaveChanges();
+            }
+
+            zamowienie.PoliczWartosc();
+            return zamowienie;
         }
 
         public void Remove(AppUser appUser)

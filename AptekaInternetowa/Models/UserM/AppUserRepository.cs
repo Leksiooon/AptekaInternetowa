@@ -56,6 +56,7 @@ namespace AptekaInternetowa.Models.UserM
                     Wartosc = 0,
                 };
                 _appDbContext.Zamowienie.Add(zamowienie);
+                _appDbContext.SaveChanges();
             }
 
             zamowienie.PoliczWartosc();

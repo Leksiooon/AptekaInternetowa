@@ -34,6 +34,21 @@ namespace AptekaInternetowa.Controllers
             return View(globalVM);
         }
 
+        public IActionResult Order(int id)
+        {
+            var zamowienie = _zamowienieRepository.GetById(id);
+
+            if (zamowienie.ElementyZamowienia == null || zamowienie.ElementyZamowienia.Count == 0)
+                return RedirectToAction("ShowBasket", "Zamowienie", new { id = id } );
+
+            if (zamowienie != null)
+            {
+                zamowienie.Status = ZamowienieType.Zrealizowane;
+                _zamowienieRepository.Update(zamowienie);
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
 
     }
 }

@@ -23,11 +23,11 @@
                 <td>@item.Produkt.Cena</td>
                 <td>@item.Ilosc</td>
                 @{ i++; }
-            <td>
-                <a class="btn btn-light" asp-action="Plus" asp-controller="Produkt" asp-route-zamowienieElementId="@item.Id">
-                    <span class="fa fa-plus"></span>
-                </a>
-            </td>
+                <td>
+                    <a class="btn btn-light" asp-action="Plus" asp-controller="Produkt" asp-route-zamowienieElementId="@item.Id">
+                        <span class="fa fa-plus"></span>
+                    </a>
+                </td>
                 <td>
                     <a class="btn btn-light" asp-action="Minus" asp-controller="Produkt" asp-route-zamowienieElementId="@item.Id">
                         <span class="fa fa-minus"></span>
@@ -40,7 +40,5 @@
                 </td>
             </tr>
         }
-
-
     </tbody>
 </table>

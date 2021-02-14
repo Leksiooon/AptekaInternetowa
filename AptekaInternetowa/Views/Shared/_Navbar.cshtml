@@ -1,13 +1,13 @@
-﻿@model AptekaInternetowa.Models.ViewModels.NavBarVM
+﻿@model AptekaInternetowa.Models.ViewModels.GlobalVM
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
     <div class="container">
         <a class="navbar-brand" asp-controller="Home" asp-action="Index"><h3>Strona główna</h3></a>
 
-        <form class="form-inline" action="/action_page.php">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-success" type="submit">Search</button>
-        </form>
+        @if (Model.HomeVM != null)
+        {
+            <partial name="_Search.cshtml" model="@Model.HomeVM" />
+        }
 
         <div style="float: right; font-size: 18px">
             <ul class="navbar-nav mr-auto">
@@ -22,7 +22,7 @@
                         </form>
                     </li>
                     <li class="nav-item">
-                        <a asp-action="ShowBasket" asp-controller="Zamowienie" asp-route-id="@Model.Zamowienie.Id" class="nav-link">Koszyk @Model.Zamowienie.Wartosc zł</a>
+                        <a asp-action="ShowBasket" asp-controller="Zamowienie" asp-route-id="@Model.NavBarVM.Zamowienie.Id" class="nav-link">Koszyk @Model.NavBarVM.Zamowienie.Wartosc zł</a>
                     </li>
                 }
                 else

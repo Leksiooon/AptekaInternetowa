@@ -6,7 +6,6 @@ E:\Projekty\AptekaInternetowa\AptekaInternetowa\bin\Debug\netcoreapp2.1\AptekaIn
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\bin\Debug\netcoreapp2.1\AptekaInternetowa.pdb
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\bin\Debug\netcoreapp2.1\AptekaInternetowa.Views.dll
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\bin\Debug\netcoreapp2.1\AptekaInternetowa.Views.pdb
-E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.csprojAssemblyReference.cache
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.AssemblyInfoInputs.cache
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.AssemblyInfo.cs
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.csproj.CoreCompileInputs.cache
@@ -33,3 +32,5 @@ E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaIn
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\Razor\Views\Zamowienie\ShowBasket.cshtml.g.cs
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\bin\Debug\netcoreapp2.1\libman.json
 E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Search.cshtml.g.cs
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\Razor\Views\Zamowienie\SubmissionedOrders.cshtml.g.cs
+E:\Projekty\AptekaInternetowa\AptekaInternetowa\obj\Debug\netcoreapp2.1\AptekaInternetowa.csprojAssemblyReference.cache

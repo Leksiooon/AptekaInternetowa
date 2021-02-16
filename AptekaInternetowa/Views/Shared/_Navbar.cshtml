@@ -14,7 +14,7 @@
                 @if (User.Identity.IsAuthenticated)
                 {
                     <li class="nav-item" style="display: block; padding: 0.5rem 1rem;">
-                        <b>Witaj @User.Identity.Name</b>
+                        <a asp-controller="Zamowienie" asp-action="SubmissionedOrders"><b>Witaj @User.Identity.Name</b></a>
                     </li>
                     <li class="nav-item">
                         <form method="post" asp-action="Logout" asp-controller="Account" id="form_logout">

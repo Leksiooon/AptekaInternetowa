@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "vUL8cDwU7mNLddgfur1bfc6P+/db3lyGVyqscTfkBVyB/XOi0O155J42+P/hICdq51JkXCygp7e31Ic67BMqbw==",
+  "dgSpecHash": "Ttje/mw9pJ5zHBGq54DwyTn9R2I/e+n0DLgpcsnFsAzwaqHRR/OfvowoG9GplhNIxX3Kr7gR/Mu/8t58woad7w==",
   "success": true,
   "projectFilePath": "E:\\Projekty\\AptekaInternetowa\\AptekaInternetowa\\AptekaInternetowa.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\siero\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\siero\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Users\\siero\\.nuget\\packages\\microsoft.aspnetcore\\2.1.1\\microsoft.aspnetcore.2.1.1.nupkg.sha512",
     "C:\\Users\\siero\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.1.1\\microsoft.aspnetcore.antiforgery.2.1.1.nupkg.sha512",
@@ -226,7 +227,7 @@
     "C:\\Users\\siero\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
     "C:\\Users\\siero\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\siero\\.nuget\\packages\\system.linq.queryable\\4.0.1\\system.linq.queryable.4.0.1.nupkg.sha512",
-    "C:\\Users\\siero\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
+    "C:\\Users\\siero\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\siero\\.nuget\\packages\\system.net.http\\4.3.0\\system.net.http.4.3.0.nupkg.sha512",
     "C:\\Users\\siero\\.nuget\\packages\\system.net.primitives\\4.3.0\\system.net.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\siero\\.nuget\\packages\\system.net.websockets.websocketprotocol\\4.5.1\\system.net.websockets.websocketprotocol.4.5.1.nupkg.sha512",

@@ -3,10 +3,10 @@ using AptekaInternetowa.Models.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using BC = BCrypt.Net.BCrypt;
 
 namespace AptekaInternetowa.Controllers
 {
@@ -37,7 +37,7 @@ namespace AptekaInternetowa.Controllers
             {
                 var user = _appUserRepository.GetAppUserByName(loginVM.UserName);
 
-                if (user != null  && user.Password == loginVM.Password)
+                if (user != null && BC.Verify(loginVM.Password, user.Password))
                 {
                     var claims = new List<Claim>
                     {
@@ -86,7 +86,7 @@ namespace AptekaInternetowa.Controllers
                 var user = new AppUser
                 {
                     Username = registerVM.UserName,
-                    Password = registerVM.Password
+                    Password = BC.HashPassword(registerVM.Password),
                 };
 
                 var result = _appUserRepository.Add(user);

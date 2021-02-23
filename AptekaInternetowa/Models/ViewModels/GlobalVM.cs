@@ -13,5 +13,6 @@ namespace AptekaInternetowa.Models.ViewModels
         public NavBarVM NavBarVM { get; set; }  // aktualny koszyk
         public LoginVM LoginVM { get; set; }
         public RegisterVM RegisterVM { get; set; }
+        public SubmissionedOrders SubmissionedOrdersVM { get; set; }
     }
 }

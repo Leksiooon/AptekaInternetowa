@@ -100,6 +100,8 @@ namespace AptekaInternetowa.Migrations
 
                     b.Property<int>("Status");
 
+                    b.Property<DateTime?>("SubmissionDate");
+
                     b.Property<double>("Wartosc");
 
                     b.HasKey("Id");

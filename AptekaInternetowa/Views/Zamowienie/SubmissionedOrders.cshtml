@@ -1,0 +1,56 @@
+﻿@model AptekaInternetowa.Models.ViewModels.GlobalVM
+
+<div id="accordion">
+
+    @{ int i = 1; }
+    @foreach (var item in Model.SubmissionedOrdersVM.Zamowienia)
+    {
+        <div class="card" style="margin-bottom: 20px">
+            <div class="card-header">
+                <button class="btn btn-light" style="width: 100%" data-toggle="collapse" data-target="#collapse@(i)" @*aria-expanded="true" aria-controls="collapse@(i)"*@>
+                    <div class="row">
+                        <div class="col-3">
+                            <h4>Zamowienie numer <b>@(i)</b></h4>
+                        </div>
+                        <div class="col-5">
+                            Data złożenia zamówienia: @item.SubmissionDate.Value.ToString("dd/MM/yyyy");
+                        </div>
+                        <div class="col-4">
+                            Zapłacono: @item.Wartosc
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+            <div id="collapse@(i)" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nazwa</th>
+                                <th scope="col">Cena</th>
+                                <th scope="col">Ilość</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{ int j = 1; }
+                            @foreach (var item2 in item.ElementyZamowienia)
+                            {
+                                <tr>
+                                    <th scope="row">@i</th>
+                                    <td>@item2.Produkt.Nazwa</td>
+                                    <td>@item2.Produkt.Cena</td>
+                                    <td>@item2.Ilosc</td>
+                                    @{ j++; }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        { i += 1; }
+    }
+</div>

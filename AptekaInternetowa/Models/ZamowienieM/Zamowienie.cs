@@ -1,7 +1,9 @@
 ﻿using AptekaInternetowa.Models.ProduktM;
 using AptekaInternetowa.Models.UserM;
 using AptekaInternetowa.Models.ZamowienieElementM;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace AptekaInternetowa.Models.ZamowienieM
 {
@@ -10,6 +12,8 @@ namespace AptekaInternetowa.Models.ZamowienieM
         public int Id { get; set; }
         public double Wartosc { get; set; }
         public ZamowienieType Status { get; set; }
+
+        public DateTime? SubmissionDate { get; set; }
 
         //sekcja odwołania do relacji z AppUser
         public AppUser AppUser { get; set; }

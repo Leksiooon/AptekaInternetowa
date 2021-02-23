@@ -30,13 +30,16 @@ namespace AptekaInternetowa.Models.UserM
         {
             return _appDbContext.AppUser
                 .Where(x => x.Id == Id)
-                .Include(x => x.Zamowienia)
-                .SingleOrDefault();
+                .Include(x => x.Zamowienia).ThenInclude(x => x.ElementyZamowienia).ThenInclude(x => x.Produkt)
+                .FirstOrDefault();
         }
 
         public AppUser GetAppUserByName(string UserName)
         {
-            return _appDbContext.AppUser.FirstOrDefault(x => x.Username == UserName);
+            return _appDbContext.AppUser
+                .Where(x => x.Username == UserName)
+                .Include(x => x.Zamowienia)
+                .FirstOrDefault();
         }
 
         public Zamowienie GetOtwarteZamowienieUseraOId(int Id)

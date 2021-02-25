@@ -13,30 +13,30 @@
         <div class="row">
             <label asp-for="@Model.RegisterVM.UserName" class="col-2 col-form-label"></label>
             <div class="col-8">
-                <input asp-for="@Model.RegisterVM.UserName" class="form-control" />
+                <input asp-for="@Model.RegisterVM.UserName" class="form-control" required/>
             </div>
         </div>
-        <span asp-validation-for="@Model.RegisterVM.UserName" class="text-danger"></span>
+        @*<span asp-validation-for="@Model.RegisterVM.UserName" class="text-danger"></span>*@
     </div>
 
     <div class="form-group">
         <div class="row">
             <label asp-for="@Model.RegisterVM.Password" class="col-2 col-form-label"></label>
             <div class="col-8">
-                <input asp-for="@Model.RegisterVM.Password" class="form-control" />
+                <input asp-for="@Model.RegisterVM.Password" class="form-control" required/>
             </div>
         </div>
-        <span asp-validation-for="@Model.RegisterVM.Password" class="text-danger"></span>
+        @*<span asp-validation-for="@Model.RegisterVM.Password" class="text-danger"></span>*@
     </div>
 
     <div class="form-group">
         <div class="row">
             <label asp-for="@Model.RegisterVM.ComparePassword" class="col-2 col-form-label"></label>
             <div class="col-8">
-                <input asp-for="@Model.RegisterVM.ComparePassword" class="form-control" />
+                <input asp-for="@Model.RegisterVM.ComparePassword" class="form-control" required/>
             </div>
         </div>
-        <span asp-validation-for="@Model.RegisterVM.ComparePassword" class="text-danger"></span>
+        @*<span asp-validation-for="@Model.RegisterVM.ComparePassword" class="text-danger"></span>*@
     </div>
 
     <div class="form-group">

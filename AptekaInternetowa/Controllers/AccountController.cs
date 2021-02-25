@@ -2,9 +2,11 @@
 using AptekaInternetowa.Models.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Security.Claims;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using BC = BCrypt.Net.BCrypt;
 
@@ -77,10 +79,14 @@ namespace AptekaInternetowa.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult Register(RegisterVM registerVM)
         {
+            var checkUser = _appUserRepository.GetAppUserByName(registerVM.UserName);
 
-            // todo dodać walidacjęformularza dla nazwy uzytkownika i hasło
+            if (checkUser != null)
+                ModelState.AddModelError("", "Użytkownik o podanej nazwie username już istnieje!");
+
             if (ModelState.IsValid)
             {
                 var user = new AppUser
@@ -93,11 +99,15 @@ namespace AptekaInternetowa.Controllers
 
                 if (result)
                     return RedirectToAction("Index", "Home");
-
-                ModelState.AddModelError("", "Użytkownik o podanej nazwie username już istnieje!");
             }
 
-            return View(registerVM);
+            var globalVM = new GlobalVM()
+            {
+                Title = "Rejestracja",
+                RegisterVM = new RegisterVM(),
+            };
+
+            return View(globalVM);
         }
 
         [HttpPost]

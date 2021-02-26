@@ -41,16 +41,8 @@ namespace AptekaInternetowa.Controllers
 
                 if (user != null && BC.Verify(loginVM.Password, user.Password))
                 {
-                    var claims = new List<Claim>
-                    {
-                        new Claim(ClaimTypes.Name, user.Username),
-                        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
-                    };
-                    var identity = new ClaimsIdentity(
-                        claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                    var principal = new ClaimsPrincipal(identity);
-                    var props = new AuthenticationProperties();
-                    HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, props).Wait();
+                    //logowanie
+                    Logging(user);
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", "Wpisane dane są niepoprawne!");
@@ -65,6 +57,19 @@ namespace AptekaInternetowa.Controllers
             return View(globalVM);
         }
 
+        private void Logging(AppUser user)
+        {
+            var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, user.Username),
+                        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
+                    };
+            var identity = new ClaimsIdentity(
+                claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var principal = new ClaimsPrincipal(identity);
+            var props = new AuthenticationProperties();
+            HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, props).Wait();
+        }
 
         [HttpGet]
         public IActionResult Register()
@@ -98,7 +103,10 @@ namespace AptekaInternetowa.Controllers
                 var result = _appUserRepository.Add(user);
 
                 if (result)
+                {
+                    Logging(user);
                     return RedirectToAction("Index", "Home");
+                }
             }
 
             var globalVM = new GlobalVM()

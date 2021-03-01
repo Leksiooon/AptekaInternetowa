@@ -1,6 +1,12 @@
 ﻿@model AptekaInternetowa.Models.ViewModels.GlobalVM
 
 <div class="container" style="padding: 15px">
+    @if(Model.SzczegolyVM.Alert != null)
+    {
+        <div class="row alert alert-primary">
+            <h5>@Model.SzczegolyVM.Alert</h5>
+        </div>
+    }
     <div class="row">
         <div class="col-4">
             <img src="~/images/@Model.SzczegolyVM.Produkt.ZdjecieUrl" alt="" />

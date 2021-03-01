@@ -6,5 +6,6 @@ namespace AptekaInternetowa.Models.ViewModels
     {
         public Produkt Produkt { get; set; }
         public int Ilosc { get; set; }
+        public string Alert { get; set; }
     }
 }

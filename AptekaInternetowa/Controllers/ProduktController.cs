@@ -26,7 +26,7 @@ namespace AptekaInternetowa.Controllers
             _zamowienieRepository = zamowienieRepository;
         }
 
-        public IActionResult Szczegoly(int id)
+        public IActionResult Szczegoly(int id, string alert = null)
         {
             var produkt = _produktRepository.GetById(id);
 
@@ -36,7 +36,8 @@ namespace AptekaInternetowa.Controllers
             var SzczegolyVM = new SzczegolyVM
             {
                 Produkt = produkt,
-                Ilosc = 1
+                Ilosc = 1,
+                Alert = alert,
             };
 
             var navBarVM = new NavBarVM();
@@ -87,7 +88,7 @@ namespace AptekaInternetowa.Controllers
                 }
             }
 
-            return RedirectToAction("Szczegoly", "Produkt", new { id = szczegolyVM.Produkt.Id });
+            return RedirectToAction("Szczegoly", "Produkt", new { id = szczegolyVM.Produkt.Id, alert = "Produkt został dodany do koszyka :)" });
         }
 
         [Authorize]

@@ -1,9 +1,9 @@
-﻿@model AptekaInternetowa.Models.ViewModels.GlobalVM
+﻿@model AptekaInternetowa.Models.ViewModels.SubmissionedOrders
 
 <div id="accordion">
 
     @{ int i = 1; }
-    @foreach (var item in Model.SubmissionedOrdersVM.Zamowienia)
+    @foreach (var item in Model.Zamowienia)
     {
         <div class="card" style="margin-bottom: 20px">
             <div class="card-header">

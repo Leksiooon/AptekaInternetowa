@@ -24,12 +24,10 @@ namespace AptekaInternetowa.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            var globalVM = new GlobalVM()
-            {
-                Title = "Logowanie",
-            };
+            ViewBag.Title = "Logowanie";
+            var LoginVM = new LoginVM();
 
-            return View(globalVM);
+            return View(LoginVM);
         }
 
         [HttpPost]
@@ -41,20 +39,15 @@ namespace AptekaInternetowa.Controllers
 
                 if (user != null && BC.Verify(loginVM.Password, user.Password))
                 {
-                    //logowanie
                     Logging(user);
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", "Wpisane dane są niepoprawne!");
             }
 
-            var globalVM = new GlobalVM()
-            {
-                Title = "Logowanie",
-                LoginVM = loginVM,
-            };
+            ViewBag.Title = "Logowanie";
 
-            return View(globalVM);
+            return View(loginVM);
         }
 
         private void Logging(AppUser user)
@@ -74,17 +67,14 @@ namespace AptekaInternetowa.Controllers
         [HttpGet]
         public IActionResult Register()
         {
-            var globalVM = new GlobalVM()
-            {
-                Title = "Rejestracja",
-                RegisterVM = new RegisterVM(),
-            };
+            ViewBag.Title = "Rejestracja";
+            var RegisterVM = new RegisterVM();
 
-            return View(globalVM);
+            return View(RegisterVM);
         }
 
-        [HttpPost]
         [AllowAnonymous]
+        [HttpPost]
         public IActionResult Register(RegisterVM registerVM)
         {
             var checkUser = _appUserRepository.GetAppUserByName(registerVM.UserName);
@@ -109,13 +99,10 @@ namespace AptekaInternetowa.Controllers
                 }
             }
 
-            var globalVM = new GlobalVM()
-            {
-                Title = "Rejestracja",
-                RegisterVM = new RegisterVM(),
-            };
+            ViewBag.Title = "Rejestracja";
+            var RegisterVM = registerVM;
 
-            return View(globalVM);
+            return View(RegisterVM);
         }
 
         [HttpPost]

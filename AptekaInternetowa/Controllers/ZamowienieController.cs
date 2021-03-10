@@ -1,6 +1,7 @@
 ﻿using AptekaInternetowa.Models.UserM;
 using AptekaInternetowa.Models.ViewModels;
 using AptekaInternetowa.Models.ZamowienieM;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
@@ -12,11 +13,13 @@ namespace AptekaInternetowa.Controllers
     {
         private readonly IZamowienieRepository _zamowienieRepository;
         private readonly IAppUserRepository _appUserRepository;
+        private readonly IZamowienieRepository _zamowienieElementRepository;
 
-        public ZamowienieController(IZamowienieRepository zamowienieRepository, IAppUserRepository appUserRepository)
+        public ZamowienieController(IZamowienieRepository zamowienieRepository, IAppUserRepository appUserRepository, IZamowienieRepository zamowienieElementRepository)
         {
             _zamowienieRepository = zamowienieRepository;
             _appUserRepository = appUserRepository;
+            _zamowienieElementRepository = zamowienieElementRepository;
         }
 
         public IActionResult ShowBasket(int id)
@@ -26,14 +29,10 @@ namespace AptekaInternetowa.Controllers
             if (zamowienie == null)
                 return NotFound();
 
-            var globalVM = new GlobalVM()
-            {
-                Title = "Twój koszyk",
-                NavBarVM = new NavBarVM() { Zamowienie = zamowienie },
-            };
+            ViewBag.Title = "Twój koszyk";
+            var basketVM = new BasketVM() { Zamowienie = zamowienie };
 
-
-            return View(globalVM);
+            return View(basketVM);
         }
 
         public IActionResult Order(int id)
@@ -41,7 +40,7 @@ namespace AptekaInternetowa.Controllers
             var zamowienie = _zamowienieRepository.GetById(id);
 
             if (zamowienie.ElementyZamowienia == null || zamowienie.ElementyZamowienia.Count == 0)
-                return RedirectToAction("ShowBasket", "Zamowienie", new { id = id } );
+                return RedirectToAction("ShowBasket", "Zamowienie", new { id = id });
 
             if (zamowienie != null)
             {
@@ -66,15 +65,11 @@ namespace AptekaInternetowa.Controllers
             var koszyk = zamowienia.Where(x => x.Status == ZamowienieType.Otwarte).ToList()[0];
             zamowienia.Remove(koszyk);
 
-            var globalVM = new GlobalVM
-            {
-                Title = "Historia zamowień",
-                NavBarVM = new NavBarVM() { Zamowienie = koszyk },
-                SubmissionedOrdersVM = new SubmissionedOrders() { Zamowienia = zamowienia },
-            };
+            ViewBag.Title = "Historia zamowień";
+            var SubmissionedOrdersVM = new SubmissionedOrders() { Zamowienia = zamowienia };
 
-            return View(globalVM);
+
+            return View(SubmissionedOrdersVM);
         }
-
     }
 }

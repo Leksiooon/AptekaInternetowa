@@ -48,7 +48,7 @@ namespace AptekaInternetowa.Models.UserM
                .Where(x => x.AppUser.Id == Id)
                .Where(x => x.Status == ZamowienieType.Otwarte)
                .Include(x => x.ElementyZamowienia).ThenInclude(x => x.Produkt)
-               .SingleOrDefault();
+               .FirstOrDefault();
 
             if (zamowienie == null)
             {

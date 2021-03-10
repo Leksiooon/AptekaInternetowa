@@ -138,4 +138,8 @@
     <PackageReference Include="ServiceStack.Interfaces" Version="5.10.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Shared\Components\" />
+  </ItemGroup>
+
 </Project>

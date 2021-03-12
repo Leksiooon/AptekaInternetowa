@@ -1,9 +1,9 @@
-﻿@model AptekaInternetowa.Models.ViewModels.HomeVM
+﻿@model List<AptekaInternetowa.Models.ProduktM.Produkt>
 
 <div class="dropdown">
     <input type="text" size="60" placeholder="Wyszukaj..." id="myInput" onkeyup="filterFunction()">
     <div id="myDropdown" class="dropdown-content">
-        @foreach (var item in Model.Produkty)
+        @foreach (var item in Model)
         {
             <a asp-controller="Produkt" asp-action="Szczegoly" asp-route-id="@item.Id">
                 <div class="row">

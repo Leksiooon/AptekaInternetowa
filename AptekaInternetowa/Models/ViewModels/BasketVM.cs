@@ -2,7 +2,7 @@
 
 namespace AptekaInternetowa.Models.ViewModels
 {
-    public class NavBarVM
+    public class BasketVM
     {
         public Zamowienie Zamowienie { get; set; }
     }

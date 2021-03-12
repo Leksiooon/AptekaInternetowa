@@ -1,11 +1,11 @@
-﻿@model AptekaInternetowa.Models.ViewModels.GlobalVM
+﻿@model AptekaInternetowa.Models.ViewModels.HomeVM
 
     <div style="padding: 10px">
-        <h4>@Model.Title</h4>
+        <h4>@ViewBag.Title</h4>
     </div>
 
     <div class="row">
-        @foreach (var produkt in Model.HomeVM.Produkty)
+        @foreach (var produkt in Model.Produkty)
         {
             <div class="col-sm-3 col-md-3 col-lg-3">
                 <div class="img-thumbnail">

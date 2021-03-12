@@ -1,4 +1,4 @@
-﻿@model AptekaInternetowa.Models.ViewModels.GlobalVM
+﻿@model AptekaInternetowa.Models.ViewModels.BasketVM
 
 <table class="table">
     <thead class="thead-light">
@@ -15,7 +15,7 @@
     <tbody>
 
         @{ int i = 1; }
-        @foreach (var item in Model.NavBarVM.Zamowienie.ElementyZamowienia)
+        @foreach (var item in Model.Zamowienie.ElementyZamowienia)
         {
             <tr>
                 <th scope="row">@i</th>
@@ -24,17 +24,17 @@
                 <td>@item.Ilosc</td>
                 @{ i++; }
                 <td>
-                    <a class="btn btn-light" asp-action="Plus" asp-controller="Produkt" asp-route-zamowienieElementId="@item.Id">
+                    <a class="btn btn-light" asp-action="Plus" asp-controller="ZamowienieElement" asp-route-zamowienieElementId="@item.Id">
                         <span class="fa fa-plus"></span>
                     </a>
                 </td>
                 <td>
-                    <a class="btn btn-light" asp-action="Minus" asp-controller="Produkt" asp-route-zamowienieElementId="@item.Id">
+                    <a class="btn btn-light" asp-action="Minus" asp-controller="ZamowienieElement" asp-route-zamowienieElementId="@item.Id">
                         <span class="fa fa-minus"></span>
                     </a>
                 </td>
                 <td>
-                    <a class="btn btn-light" asp-action="Remove" asp-controller="Produkt" asp-route-zamowienieElementId="@item.Id">
+                    <a class="btn btn-light" asp-action="Remove" asp-controller="ZamowienieElement" asp-route-zamowienieElementId="@item.Id">
                         <span class="fa fa-trash-alt"></span>
                     </a>
                 </td>
@@ -45,8 +45,8 @@
 
 <div class="row justify-content-end">
     <div class="col-1"><b>Suma: </b></div>
-    <div class="col-1"><b>@Model.NavBarVM.Zamowienie.Wartosc zł</b></div>
-    <div class="col-1"><b><a role="button" class="btn btn-success" asp-action="Order" asp-controller="Zamowienie" asp-route-id="@Model.NavBarVM.Zamowienie.Id">Zamawiam</a></b></div>
+    <div class="col-1"><b>@Model.Zamowienie.Wartosc zł</b></div>
+    <div class="col-1"><b><a role="button" class="btn btn-success" asp-action="Order" asp-controller="Zamowienie" asp-route-id="@Model.Zamowienie.Id">Zamawiam</a></b></div>
     <div class="col-1"></div>
 </div>
 

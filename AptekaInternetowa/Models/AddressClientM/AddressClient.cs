@@ -1,8 +1,4 @@
 ﻿using AptekaInternetowa.Models.UserM;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AptekaInternetowa.Models.AddressClientM
 {
@@ -16,7 +12,7 @@ namespace AptekaInternetowa.Models.AddressClientM
         public string PostCode { get; set; }
         public string StreetNumber { get; set; } // numer budynku/lokalu
 
-        public int AppUserId { get; set; }
-        public AppUser AppUser { get; set; }
+        public virtual int AppUserId { get; set; }
+        public virtual AppUser AppUser { get; set; }
     }
 }

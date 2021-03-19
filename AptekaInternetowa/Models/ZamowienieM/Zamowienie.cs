@@ -3,7 +3,6 @@ using AptekaInternetowa.Models.UserM;
 using AptekaInternetowa.Models.ZamowienieElementM;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace AptekaInternetowa.Models.ZamowienieM
 {
@@ -15,11 +14,8 @@ namespace AptekaInternetowa.Models.ZamowienieM
 
         public DateTime? SubmissionDate { get; set; }
 
-        //sekcja odwołania do relacji z AppUser
-        public AppUser AppUser { get; set; }
-
-        //sekcja odwołania do kolekcji z Zamowienie
-        public List<ZamowienieElement> ElementyZamowienia { get; set; }
+        public virtual AppUser AppUser { get; set; }
+        public virtual List<ZamowienieElement> ElementyZamowienia { get; set; }
 
         public double PoliczWartosc()
         {
@@ -33,7 +29,6 @@ namespace AptekaInternetowa.Models.ZamowienieM
             this.Wartosc = wartosc;
             return wartosc;
         }
-
         public ZamowienieElement ZnajdzZamowienieElement(Produkt produkt)
         {
             if (this.ElementyZamowienia == null)

@@ -11,8 +11,7 @@ namespace AptekaInternetowa.Models.UserM
         public string Email { get; set; }
         public string Password { get; set; }
 
-        public List<Zamowienie> Zamowienia { get; set; }
-
-        public AddressClient Address { get; set; }
+        public virtual List<Zamowienie> Zamowienia { get; set; }
+        public virtual AddressClient Address { get; set; }
     }
 }

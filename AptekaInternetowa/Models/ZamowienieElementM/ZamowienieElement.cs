@@ -8,10 +8,7 @@ namespace AptekaInternetowa.Models.ZamowienieElementM
         public int Id { get; set; }
         public int Ilosc { get; set; }
 
-        //sekcja odwołania do relacji z Produkt
-        public Produkt Produkt { get; set; }
-
-        //sekcja odwołania do relacji z Zamowienie
-        public Zamowienie Zamowienie { get; set; }
+        public virtual Produkt Produkt { get; set; }
+        public virtual Zamowienie Zamowienie { get; set; }
     }
 }

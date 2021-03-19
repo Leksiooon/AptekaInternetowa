@@ -25,8 +25,11 @@ namespace AptekaInternetowa.Models
                 .HasOne<AddressClient>(s => s.Address)
                 .WithOne(a => a.AppUser)
                 .HasForeignKey<AddressClient>(a => a.AppUserId);
+        }
 
-
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLazyLoadingProxies();
         }
     }
 }

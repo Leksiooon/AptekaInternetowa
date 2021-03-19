@@ -77,7 +77,7 @@ namespace AspNetCore
             WriteLiteral("    <div class=\"row\">\r\n        <div class=\"col-4\">\r\n            ");
             EndContext();
             BeginContext(311, 55, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7a055c311bcb440ab235bdc04e93ab2f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "3a4e739329cf4d0fa613fd28a8b0d88b", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -133,7 +133,7 @@ AddHtmlAttributeValue("", 330, Model.Produkt.ZdjecieUrl, 330, 25, false);
             WriteLiteral("</p>\r\n\r\n            <div class=\"col-5\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-5\">\r\n                        ");
             EndContext();
             BeginContext(903, 333, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9f32fc2b63274a4ba8d1c7888d2dd49f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "17ef1816b84643b7867b74bf0de9520a", async() => {
                 BeginContext(987, 30, true);
                 WriteLiteral("\r\n                            ");
                 EndContext();

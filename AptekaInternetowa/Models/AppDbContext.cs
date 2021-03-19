@@ -1,9 +1,8 @@
-﻿using AptekaInternetowa.Models.ProduktM;
+﻿using AptekaInternetowa.Models.AddressClientM;
+using AptekaInternetowa.Models.ProduktM;
 using AptekaInternetowa.Models.UserM;
 using AptekaInternetowa.Models.ZamowienieElementM;
 using AptekaInternetowa.Models.ZamowienieM;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace AptekaInternetowa.Models
@@ -18,12 +17,14 @@ namespace AptekaInternetowa.Models
         public DbSet<ZamowienieElement> ZamowienieElement { get; set; }
         public DbSet<Zamowienie> Zamowienie { get; set; }
         public DbSet<AppUser> AppUser { get; set; }
+        public DbSet<AddressClient> AddressClient { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            //builder.Entity<AppUser>()
-            //    .HasIndex(u => u.Email)
-            //    .IsUnique();
+            builder.Entity<AppUser>()
+                .HasOne<AddressClient>(s => s.Address)
+                .WithOne(a => a.AppUser)
+                .HasForeignKey<AddressClient>(a => a.AppUserId);
 
 
         }

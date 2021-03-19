@@ -22,6 +22,7 @@ namespace AptekaInternetowa.Controllers
             _zamowienieElementRepository = zamowienieElementRepository;
         }
 
+        [Authorize]
         public IActionResult ShowBasket(int id)
         {
             var zamowienie = _zamowienieRepository.GetById(id);
@@ -35,6 +36,7 @@ namespace AptekaInternetowa.Controllers
             return View(basketVM);
         }
 
+        [Authorize]
         public IActionResult Order(int id)
         {
             var zamowienie = _zamowienieRepository.GetById(id);
@@ -52,6 +54,7 @@ namespace AptekaInternetowa.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [Authorize]
         public IActionResult SubmissionedOrders()
         {
             var userId = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
